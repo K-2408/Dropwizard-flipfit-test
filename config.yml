@@ -1,0 +1,29 @@
+## Template and defaultName can be at the top level
+#template: Hello, %s!
+#defaultName: Stranger
+
+# Logging configuration
+logging:
+  level: INFO
+  loggers:
+    org.flipflit: DEBUG
+
+# Server configuration
+server:
+  applicationConnectors:
+    - type: http
+      port: 8080
+  adminConnectors:
+    - type: http
+      port: 8081
+
+# Database Configuration for MySQL
+database:
+  driverClass: com.mysql.cj.jdbc.Driver
+  user: root # Your DB username
+  password: Kriti@sql123 # Your DB password
+  url: jdbc:mysql://localhost:3306/FlipFit_Schema?createDatabaseIfNotExist=true
+  properties:
+    charSet: UTF-8
+    hibernate.dialect: org.hibernate.dialect.MySQL8Dialect
+    hibernate.hbm2ddl.auto: update
